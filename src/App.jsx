@@ -18,6 +18,13 @@ const App = () => {
    })
   }
 
+  const drawnani = ()=>{
+    const jsConfetti = new JSConfetti()
+    jsConfetti.addConfetti({
+      emojis: ['🤨','😐','😏', '😴', '😏', '😊', '😉', '🤔','🫥','🙄'],
+   })
+  }
+
   const disableClick = (id) => {
     document.getElementById(id).style.pointerEvents = 'none'
   }
@@ -92,7 +99,9 @@ const App = () => {
       document.getElementById('cell7').className="winner"
       setGame(false)
     }else if(click>=8){
+      document.getElementById('res').style.color="red"
       setResult("Game Drawn")
+      drawnani()
     }
   }
 
