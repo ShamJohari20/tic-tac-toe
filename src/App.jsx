@@ -1,5 +1,7 @@
 import { useState } from "react"
 import "./App.css"
+import JSConfetti from 'js-confetti'
+
 
 
 const App = () => {
@@ -8,6 +10,13 @@ const App = () => {
   const [result, setResult] = useState('')
   const [game, setGame] = useState(true)
   const [click, setClick] = useState(0)
+
+  const winani = ()=>{
+    const jsConfetti = new JSConfetti()
+    jsConfetti.addConfetti({
+      emojis: ['🌈', '⚡️', '💥', '✨', '💫', '❤️','💖','😍'],
+   })
+  }
 
   const disableClick = (id) => {
     document.getElementById(id).style.pointerEvents = 'none'
@@ -20,6 +29,8 @@ const App = () => {
     }
     if (player == values[1] && player == values[2] && player == values[3]) {
       setResult(player + " is Winner ")
+      winani()
+      winani()
       document.getElementById('cell1').className="winner"
       document.getElementById('cell2').className="winner"
       document.getElementById('cell3').className="winner"
@@ -27,6 +38,8 @@ const App = () => {
     }
     else if (player == values[4] && player == values[5] && player == values[6]) {
       setResult(player + " is Winner ")
+      winani()
+      winani()
       document.getElementById('cell4').className="winner"
       document.getElementById('cell5').className="winner"
       document.getElementById('cell6').className="winner"
@@ -34,6 +47,7 @@ const App = () => {
     }
     else if (player == values[7] && player == values[8] && player == values[9]) {
       setResult(player + " is Winner ")
+      winani()
       document.getElementById('cell7').className="winner"
       document.getElementById('cell8').className="winner"
       document.getElementById('cell9').className="winner"
@@ -41,6 +55,7 @@ const App = () => {
     }
     else if (player == values[1] && player == values[4] && player == values[7]) {
       setResult(player + " is Winner ")
+      winani()
       document.getElementById('cell1').className="winner"
       document.getElementById('cell4').className="winner"
       document.getElementById('cell7').className="winner"
@@ -48,6 +63,7 @@ const App = () => {
     }
     else if (player == values[2] && player == values[5] && player == values[8]) {
       setResult(player + " is Winner ")
+      winani()
       document.getElementById('cell2').className="winner"
       document.getElementById('cell5').className="winner"
       document.getElementById('cell8').className="winner"
@@ -55,6 +71,7 @@ const App = () => {
     }
     else if (player == values[3] && player == values[6] && player == values[9]) {
       setResult(player + " is Winner ")
+      winani()
       document.getElementById('cell3').className="winner"
       document.getElementById('cell6').className="winner"
       document.getElementById('cell9').className="winner"
@@ -62,12 +79,14 @@ const App = () => {
     }
     else if (player == values[1] && player == values[5] && player == values[9]) {
       setResult(player + " is Winner ")
+      winani()
       document.getElementById('cell1').className="winner"
       document.getElementById('cell5').className="winner"
       document.getElementById('cell9').className="winner"
       setGame(false)
     } else if (player == values[3] && player == values[5] && player == values[7]) {
       setResult(player + " is Winner ")
+      winani()
       document.getElementById('cell3').className="winner"
       document.getElementById('cell5').className="winner"
       document.getElementById('cell7').className="winner"
